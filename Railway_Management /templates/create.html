@@ -1,0 +1,116 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Create</title>  
+    {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>  
+<body style="justify-content: center;">  
+
+<form method="POST" class="post-form" action="/create" enctype="multipart/form-data">  
+        {% csrf_token %}  
+        <div class="container">  
+          <br>  
+              <div class="form-group row">  
+              <label class="col-sm-1 col-form-label"></label>  
+              <div class="col-sm-4">  
+              <h3>Details</h3>  
+              </div>  
+            </div>  
+              <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">UserId:</label>  
+              <div class="col-sm-4">  
+                {{ form.id }}  
+              </div>  
+            </div>  
+            <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">User Name:</label>  
+              <div class="col-sm-4">  
+                {{ form.name }}  
+              </div>  
+            </div>  
+              <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">User Email:</label>  
+              <div class="col-sm-4">  
+                {{ form.email }}  
+              </div>  
+            </div>  
+              <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">User Contact:</label>  
+              <div class="col-sm-4">  
+                {{ form.contact }}  
+              </div>  
+            </div>  
+          
+              <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Gender:</label>      
+              <div class="col-sm-4">  
+                  {{ form.gender }}  
+              </div>
+            </div>    
+              <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Maritial Status:</label>      
+              <div class="col-sm-4">  
+                  {% for i in form.usrStatus %}
+                  {{ i }}  
+                  {% endfor %}
+                  
+              </div>
+            </div>    
+            <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Age:</label>      
+              <div class="col-sm-4">  
+                  {{ form.age }}
+              </div>
+            </div>    
+          
+            <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Date Of Journey:</label>      
+              <div class="col-sm-4">  
+                  {{ form.date_of_journey }}
+              </div>
+            </div>    
+            <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Seat:</label>      
+              <div class="col-sm-4">  
+                  {{ form.seat }}
+              </div>
+            </div>    
+              <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Coach:</label>      
+              <div class="col-sm-4">  
+                  {% for i in form.coach %}
+                  {{ i }}
+                  {% endfor %} 
+                  
+              </div>
+            </div>    
+            <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Birthmark:</label>      
+              <div class="col-sm-4">  
+                  {{ form.birthmark }}
+                  
+              </div>
+            </div>  
+            <div class="form-group row">  
+              <label class="col-sm-2 col-form-label">Image:</label>      
+              <div class="col-sm-4">  
+                  {{ form.usrImg }}
+                  
+              </div>
+            </div>  
+          
+              <div class="form-group row">  
+              <label class="col-sm-1 col-form-label"></label>  
+              <div class="col-sm-4">  
+              <button type="submit" class="btn btn-primary">Submit</button>  
+              </div>  
+            </div>  
+              </div> 
+</form> 
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</body>  
+</html>  
